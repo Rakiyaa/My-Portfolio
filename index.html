@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rakindu Amavin | Portfolio</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <ul class="nav-left">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+      </ul>
+
+      <div class="nav-logo">Rakindu Amavin</div>
+
+      <ul class="nav-right">
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#projects" class="nav-link">Project</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <canvas id="particleCanvas"></canvas>
+    <div class="hero-grid-overlay"></div>
+
+    <!-- Pen Tool Vector Decorations -->
+    <div class="hero-vectors">
+      <!-- Bezier curve 1 - top right -->
+      <svg class="vector-path v-path-1" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 180 C60 20, 140 20, 180 180" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"
+          opacity="0.3" class="draw-path" />
+        <circle cx="20" cy="180" r="5" fill="var(--accent)" opacity="0.6" />
+        <circle cx="180" cy="180" r="5" fill="var(--accent)" opacity="0.6" />
+        <circle cx="60" cy="20" r="3" fill="none" stroke="var(--accent)" stroke-width="1.5" opacity="0.4" />
+        <circle cx="140" cy="20" r="3" fill="none" stroke="var(--accent)" stroke-width="1.5" opacity="0.4" />
+        <line x1="20" y1="180" x2="60" y2="20" stroke="var(--accent)" stroke-width="1" opacity="0.15"
+          stroke-dasharray="4 4" />
+        <line x1="180" y1="180" x2="140" y2="20" stroke="var(--accent)" stroke-width="1" opacity="0.15"
+          stroke-dasharray="4 4" />
+      </svg>
+
+      <!-- Bezier curve 2 - bottom left -->
+      <svg class="vector-path v-path-2" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 80 C50 10, 110 150, 150 80" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"
+          opacity="0.25" class="draw-path" />
+        <circle cx="10" cy="80" r="5" fill="var(--accent)" opacity="0.5" />
+        <circle cx="150" cy="80" r="5" fill="var(--accent)" opacity="0.5" />
+        <circle cx="50" cy="10" r="3" fill="none" stroke="var(--accent)" stroke-width="1.5" opacity="0.35" />
+        <circle cx="110" cy="150" r="3" fill="none" stroke="var(--accent)" stroke-width="1.5" opacity="0.35" />
+        <line x1="10" y1="80" x2="50" y2="10" stroke="var(--accent)" stroke-width="1" opacity="0.12"
+          stroke-dasharray="4 4" />
+        <line x1="150" y1="80" x2="110" y2="150" stroke="var(--accent)" stroke-width="1" opacity="0.12"
+          stroke-dasharray="4 4" />
+      </svg>
+
+      <!-- Small triangle path 3 - top left -->
+      <svg class="vector-path v-path-3" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50 10 L90 80 L10 80 Z" stroke="var(--accent)" stroke-width="1.5" opacity="0.2" fill="none" />
+        <circle cx="50" cy="10" r="4" fill="var(--accent)" opacity="0.5" />
+        <circle cx="90" cy="80" r="4" fill="var(--accent)" opacity="0.5" />
+        <circle cx="10" cy="80" r="4" fill="var(--accent)" opacity="0.5" />
+      </svg>
+
+      <!-- Curved line 4 - mid right -->
+      <svg class="vector-path v-path-4" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 110 Q60 10 110 110" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" opacity="0.2"
+          class="draw-path" />
+        <circle cx="10" cy="110" r="4" fill="var(--accent)" opacity="0.45" />
+        <circle cx="110" cy="110" r="4" fill="var(--accent)" opacity="0.45" />
+        <circle cx="60" cy="10" r="3" fill="none" stroke="var(--accent)" stroke-width="1.5" opacity="0.3" />
+        <line x1="10" y1="110" x2="60" y2="10" stroke="var(--accent)" stroke-width="1" opacity="0.1"
+          stroke-dasharray="3 3" />
+        <line x1="110" y1="110" x2="60" y2="10" stroke="var(--accent)" stroke-width="1" opacity="0.1"
+          stroke-dasharray="3 3" />
+      </svg>
+
+      <!-- Small circle path 5 - bottom right -->
+      <svg class="vector-path v-path-5" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="40" cy="40" r="30" stroke="var(--accent)" stroke-width="1.5" opacity="0.15" />
+        <circle cx="40" cy="10" r="3" fill="var(--accent)" opacity="0.4" />
+        <circle cx="70" cy="40" r="3" fill="var(--accent)" opacity="0.4" />
+        <circle cx="40" cy="70" r="3" fill="var(--accent)" opacity="0.4" />
+        <circle cx="10" cy="40" r="3" fill="var(--accent)" opacity="0.4" />
+      </svg>
+    </div>
+
+    <div class="hero-content">
+      <p class="hero-greeting">Hello, I'm</p>
+
+      <h1 class="hero-name">
+        <span class="name-line">Rakindu</span>
+        <span class="name-line accent">Amavin</span>
+      </h1>
+
+      <div class="hero-role">
+        <span class="role-prefix">I'm a </span>
+        <span class="typed-text" id="typedText"></span>
+        <span class="cursor-blink">|</span>
+      </div>
+
+      <p class="hero-sub">
+        3rd Year IT Undergraduate at SLIIT · Specialising in Information Technology
+      </p>
+
+      <div class="hero-cta">
+        <a href="#contact" class="btn-glow">
+          Get in touch
+          <span class="hoverEffect"><span></span></span>
+        </a>
+
+        <a href="#about" class="btn-glow">
+          Learn more
+          <span class="hoverEffect"><span></span></span>
+        </a>
+      </div>
+
+      <div class="hero-socials">
+        <a href="https://www.linkedin.com/in/rakindu-amavin-692389269/?isSelfProfile=true" target="_blank"
+          class="social-icon" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+
+        <a href="https://github.com/Rakiyaa" target="_blank" class="social-icon" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+
+        <a href="mailto:rakiya9573@gmail.com" class="social-icon" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-image-wrapper">
+      <div class="hero-image-glow"></div>
+      <div class="hero-image-ring ring-1"></div>
+      <div class="hero-image-ring ring-2"></div>
+      <div class="hero-image-ring ring-3"></div>
+
+      <div class="hero-img-container">
+        <img src="Img/pp1.png" alt="Rakindu Amavin" class="hero-img" />
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <div class="scroll-arrows">
+        <span class="scroll-arrow"></span>
+        <span class="scroll-arrow"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Get To Know</p>
+        <h2 class="section-title">About <span class="accent">Me</span></h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-image-side">
+          <div class="about-img-frame">
+            <img src="Img/pp1.png" alt="Rakindu Amavin" class="about-img" />
+            <div class="about-img-border"></div>
+            <div class="about-img-dot dot-tl"></div>
+            <div class="about-img-dot dot-br  "></div>
+          </div>
+
+          <div class="about-stats">
+            <div class="stat-card">
+              <span class="stat-number">3<sup>rd</sup></span>
+              <span class="stat-label">Year Student</span>
+            </div>
+
+            <div class="stat-card">
+              <span class="stat-number">IT</span>
+              <span class="stat-label">BSc (Hons)</span>
+            </div>
+
+            <div class="stat-card">
+              <span class="stat-number">IT</span>
+              <span class="stat-label">Specialisation</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-content-side">
+          <h3 class="about-heading">Crafting Digital Experiences</h3>
+
+          <p class="about-text">
+            I'm <strong>Rakindu Amavin</strong>, a passionate and driven undergraduate at
+            <strong>SLIIT (Sri Lanka Institute of Information Technology)</strong>, pursuing a
+            BSc (Hons) in Information Technology with a specialisation in
+            <strong>Information Technology</strong>.
+          </p>
+
+          <p class="about-text">
+            Currently in my 3rd year, I blend technical knowledge with creative vision to build
+            engaging digital experiences. My focus lies at the intersection of design and
+            technology — crafting interfaces that are not just functional, but truly memorable.
+          </p>
+
+          <div class="about-info-grid">
+            <div class="info-item">
+              <i class="fas fa-user-graduate"></i>
+              <div>
+                <span class="info-label">University</span>
+                <span class="info-value">SLIIT</span>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <i class="fas fa-book-open"></i>
+              <div>
+                <span class="info-label">Degree</span>
+                <span class="info-value">BSc (Hons) IT</span>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <span class="info-label">Email</span>
+                <span class="info-value">rakiya9573@gmail.com</span>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <i class="fas fa-phone"></i>
+              <div>
+                <span class="info-label">Phone</span>
+                <span class="info-value">0759948727</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-cta">
+            <a href="#contact" class="btn-glow">
+              Contact Me
+              <span class="hoverEffect"><span></span></span>
+            </a>
+
+            <a href="https://github.com/Rakiyaa" target="_blank" class="btn-glow">
+              <i class="fab fa-github"></i>&nbsp; GitHub
+              <span class="hoverEffect"><span></span></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" class="skills">
+    <div class="container">
+      <div class="skills-left">
+        <h2 class="skills-title">My creative toolbox</h2>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skills-column">
+          <div class="skill-card-tool">
+            <div class="skill-card-header">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" />
+              <div>
+                <h4>Figma</h4>
+                <p>UI/UX Design Tool</p>
+              </div>
+            </div>
+            <div class="skill-progress">
+              <div class="progress-bar" data-width="90%" style="width: 0;"></div>
+              <span class="progress-text">90%</span>
+            </div>
+          </div>
+
+          <div class="skill-card-tool">
+            <div class="skill-card-header">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
+              <div>
+                <h4>React</h4>
+                <p>Frontend Development</p>
+              </div>
+            </div>
+            <div class="skill-progress">
+              <div class="progress-bar" data-width="75%" style="width: 0;"></div>
+              <span class="progress-text">75%</span>
+            </div>
+          </div>
+
+          <div class="skill-card-tool">
+            <div class="skill-card-header">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg"
+                alt="Photoshop" />
+              <div>
+                <h4>Photoshop</h4>
+                <p>Graphic Design</p>
+              </div>
+            </div>
+            <div class="skill-progress">
+              <div class="progress-bar" data-width="60%" style="width: 0;"></div>
+              <span class="progress-text">60%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills-column">
+          <div class="skill-card-tool">
+            <div class="skill-card-header">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML/CSS" />
+              <div>
+                <h4>HTML / CSS</h4>
+                <p>Web Structure &amp; Styling</p>
+              </div>
+            </div>
+            <div class="skill-progress">
+              <div class="progress-bar" data-width="85%" style="width: 0;"></div>
+              <span class="progress-text">85%</span>
+            </div>
+          </div>
+
+          <div class="skill-card-tool">
+            <div class="skill-card-header">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                alt="JavaScript" />
+              <div>
+                <h4>JavaScript</h4>
+                <p>Programming Language</p>
+              </div>
+            </div>
+            <div class="skill-progress">
+              <div class="progress-bar" data-width="70%" style="width: 0;"></div>
+              <span class="progress-text">70%</span>
+            </div>
+          </div>
+
+          <div class="skill-card-tool">
+            <div class="skill-card-header">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg"
+                alt="Illustrator" />
+              <div>
+                <h4>Illustrator</h4>
+                <p>Vector Graphics</p>
+              </div>
+            </div>
+            <div class="skill-progress">
+              <div class="progress-bar" data-width="65%" style="width: 0;"></div>
+              <span class="progress-text">65%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDUCATION ===== -->
+  <section class="education" id="education">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">My Journey</p>
+        <h2 class="section-title">Education &amp; <span class="accent">Background</span></h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-line"></div>
+
+        <div class="timeline-item left reveal">
+          <div class="timeline-dot">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-card-header">
+              <span class="timeline-year">2023 – Present</span>
+              <span class="timeline-badge current">Current</span>
+            </div>
+            <h3 class="timeline-title">BSc (Hons) in Information Technology</h3>
+            <h4 class="timeline-org">SLIIT – Sri Lanka Institute of Information Technology</h4>
+            <p class="timeline-desc">
+              Specialising in <strong>Information Technology</strong>. Currently in 3rd year,
+              1st semester. Gaining expertise in web development, UI/UX, interactive
+              design, and software engineering principles.
+            </p>
+            <div class="timeline-tags">
+              <span class="tag">UI/UX</span>
+              <span class="tag">Web Development</span>
+              <span class="tag">Graphic Design</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item right reveal">
+          <div class="timeline-dot">
+            <i class="fas fa-school"></i>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-card-header">
+              <span class="timeline-year">A/L Studies</span>
+            </div>
+            <h3 class="timeline-title">Advanced Level Examinations</h3>
+            <h4 class="timeline-org">Secondary Education, Sri Lanka</h4>
+            <p class="timeline-desc">
+              Completed Advanced Level studies with a focus on the sciences and
+              technology stream, building a strong analytical foundation before
+              entering higher education.
+            </p>
+            <div class="timeline-tags">
+              <span class="tag"></span>
+              <span class="tag">Technology</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item left reveal">
+          <div class="timeline-dot">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-card-header">
+              <span class="timeline-year">Ongoing</span>
+            </div>
+            <h3 class="timeline-title">Self-Learning &amp; Projects</h3>
+            <h4 class="timeline-org">GitHub – Rakiyaa</h4>
+            <p class="timeline-desc">
+              Continuously building projects and expanding skills in front-end
+              development, interactive design, and modern web technologies through
+              hands-on practice and open-source contributions.
+            </p>
+            <div class="timeline-tags">
+              <span class="tag">Open Source</span>
+              <span class="tag">Personal Projects</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item right reveal">
+          <div class="timeline-dot">
+            <i class="fas fa-book"></i>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-card-header">
+              <span class="timeline-year">O/L Studies</span>
+            </div>
+            <h3 class="timeline-title">Ordinary Level Examinations</h3>
+            <h4 class="timeline-org">Secondary Education, Sri Lanka</h4>
+            <p class="timeline-desc">
+              Successfully completed Ordinary Level examinations with strong
+              results, developing a solid academic foundation in mathematics,
+              science, and languages that supported further studies in the
+              technology stream.
+            </p>
+            <div class="timeline-tags">
+              <span class="tag"></span>
+              <span class="tag"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item left reveal">
+          <div class="timeline-dot">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-card-header">
+              <span class="timeline-year">In Progress</span>
+            </div>
+            <h3 class="timeline-title">Google UX Design Certificate</h3>
+            <h4 class="timeline-org">Coursera – Google Career Certificates</h4>
+            <p class="timeline-desc">
+              Currently completing the <strong>Google UX Design </strong>Professional Certificate on Coursera.
+              Learning user research, wireframing, prototyping, usability testing, and design
+              thinking to create user-centered digital products and interfaces.
+            </p>
+            <div class="timeline-tags">
+              <span class="tag">Certifications</span>
+              <span class="tag">Coursera</span>
+              <span class="tag">UI/UX</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section class="projects-section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label"></p>
+        <h2 class="section-title">Project <span class="accent">Showcase</span></h2>
+      </div>
+
+      <div class="projects-grid">
+
+        <div class="project-card reveal">
+          <div class="project-img-wrapper">
+            <img src="Img/landing 1.png" alt="Project 1" class="project-img" />
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Product Landing Page UI – Ice Cream Brand</h3>
+            <p class="project-desc">
+              Designed a modern product landing page UI for an ice cream brand using Figma. The design focuses on clean
+              layout, product highlighting, and user-friendly navigation. This project improved my skills in layout
+              design, color selection, typography, and component-based UI design.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Figma</span>
+              <span class="tag">UI Design</span>
+              <span class="tag">UX Design</span>
+            </div>
+            <div class="project-links">
+              <a href="#" target="_blank" class="project-link" aria-label="GitHub Repository">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+              <a href="https://www.figma.com/proto/fXimhSNSkt9dVD3sQWiOlg/Untitled?node-id=10-657&t=XYzkOMRCxa6q8kQF-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=10%3A657"
+                target="_blank" class="project-link" aria-label="Live Preview">
+                <i class="fas fa-external-link-alt"></i> Preview
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-img-wrapper">
+            <img src="Img/Project2.png" alt="Project 2" class="project-img" />
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">MediPal Mobile App UI (Figma)</h3>
+            <p class="project-desc">
+              Designed a healthcare mobile application UI using Figma that helps users manage medications,
+              track doctor appointments, and monitor daily health activities. The app UI focuses on simple navigation,
+              clean layout, and modern mobile interface design principles.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Figma</span>
+              <span class="tag">UI Design</span>
+              <span class="tag">UX Design</span>
+            </div>
+            <div class="project-links">
+              <a href="#" target="_blank" class="project-link" aria-label="GitHub Repository">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+              <a href="https://www.figma.com/proto/irUB0CM3pPhSXSbJpmK11T/MediPal?node-id=4029-3464&p=f&viewport=33%2C198%2C0.31&t=O8tbeCXXIJZO4Vyl-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=4029%3A3464&page-id=1%3A3"
+                target="_blank" class="project-link" aria-label="Live Preview">
+                <i class="fas fa-external-link-alt"></i> Preview
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-img-wrapper">
+            <img src="Img/" alt="Project 3" class="project-img" />
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Project Name</h3>
+            <p class="project-desc">
+              A brief description of the project, what it does, and the problem it solves.
+              Replace this with your actual project description.
+            </p>
+            <div class="project-tags">
+              <span class="tag">React</span>
+              <span class="tag">Express</span>
+              <span class="tag">Socket.io</span>
+            </div>
+            <div class="project-links">
+              <a href="#" target="_blank" class="project-link" aria-label="GitHub Repository">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+              <a href="#" target="_blank" class="project-link" aria-label="Live Preview">
+                <i class="fas fa-external-link-alt"></i> Preview
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-img-wrapper">
+            <img src="Img/" alt="Project 4" class="project-img" />
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Project Name</h3>
+            <p class="project-desc">
+              A brief description of the project, what it does, and the problem it solves.
+              Replace this with your actual project description.
+            </p>
+            <div class="project-tags">
+              <span class="tag">MERN Stack</span>
+              <span class="tag">Authentication</span>
+              <span class="tag">Payments</span>
+            </div>
+            <div class="project-links">
+              <a href="#" target="_blank" class="project-link" aria-label="GitHub Repository">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+              <a href="#" target="_blank" class="project-link" aria-label="Live Preview">
+                <i class="fas fa-external-link-alt"></i> Preview
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Let's Connect</p>
+        <h2 class="section-title">Get In <span class="accent">Touch</span></h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info-side">
+          <p class="contact-intro">
+            I'm always open to new opportunities, collaborations, and conversations.
+            Whether you have a project in mind or just want to say hi — my inbox is open!
+          </p>
+
+          <div class="contact-cards">
+            <a href="mailto:edmundaugustine12@gmail.com" class="contact-card">
+              <div class="contact-card-icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <span class="contact-card-label">Email</span>
+                <span class="contact-card-value">rakiya9573@gmail.com</span>
+              </div>
+            </a>
+
+            <a href="tel:0759948727" class="contact-card">
+              <div class="contact-card-icon"><i class="fas fa-phone"></i></div>
+              <div>
+                <span class="contact-card-label">Phone</span>
+                <span class="contact-card-value">0768589573</span>
+              </div>
+            </a>
+
+            <a href="https://www.linkedin.com/in/rakindu-amavin-692389269/" target="_blank" class="contact-card">
+              <div class="contact-card-icon"><i class="fab fa-linkedin-in"></i></div>
+              <div>
+                <span class="contact-card-label">LinkedIn</span>
+                <span class="contact-card-value">Rakindu Amavin</span>
+              </div>
+            </a>
+
+            <a href="https://github.com/Rakiyaa" target="_blank" class="contact-card">
+              <div class="contact-card-icon"><i class="fab fa-github"></i></div>
+              <div>
+                <span class="contact-card-label">GitHub</span>
+                <span class="contact-card-value">Rakiyaa</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-form-side">
+          <form class="contact-form" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="john@example.com" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="Let's collaborate!" required />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..."
+                required></textarea>
+            </div>
+
+            <button type="submit" class="btn-glow btn-submit-glow">
+              <span>
+                <i class="fas fa-paper-plane"></i> Send Message
+              </span>
+              <span class="hoverEffect"><span></span></span>
+            </button>
+
+            <div class="form-success" id="formSuccess">
+              <i class="fas fa-check-circle"></i> Message sent successfully!
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <span class="logo-text">RA</span>
+          <p>Rakindu Amavin</p>
+        </div>
+
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="footer-socials">
+          <a href="https://www.linkedin.com/in/rakindu-amavin-692389269/" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/Rakiyaa" target="_blank" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="mailto:rakiya9573@gmail.com" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Rakindu Amavin. Crafted with <i class="fas fa-heart"></i> and passion.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lenis@1.3.11/dist/lenis.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
