@@ -2,7 +2,7 @@
    LENIS SMOOTH SCROLL
    ============================ */
 const lenis = new Lenis({
-  duration: 1.2,
+  duration: 0.8,
   smoothWheel: true,
   smoothTouch: true,
   touchMultiplier: 2,
@@ -390,7 +390,7 @@ const revealObserver = new IntersectionObserver((entries) => {
     if (entry.isIntersecting) {
       setTimeout(() => {
         entry.target.classList.add('visible');
-      }, 100 * (i % 3));
+      }, 50 * (i % 3));
 
       revealObserver.unobserve(entry.target);
     }
@@ -417,7 +417,7 @@ if (skillsSection && skillCards.length) {
             const targetWidth = progressBar.getAttribute('data-width') || progressBar.style.width;
             progressBar.style.width = targetWidth;
           }
-        }, index * 250);
+        }, index * 150);
       });
 
       skillsObserver.unobserve(skillsSection);
@@ -469,7 +469,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 
       lenis.scrollTo(target, {
         offset: -70,
-        duration: 0.7
+        duration: 0.4
       });
     }
   });
